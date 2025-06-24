@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-quarto-basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">04-quarto-basic.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible reports, projects and quarto</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -223,15 +223,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#file-formats-for-editing-and-executiong-r-code" id="toc-file-formats-for-editing-and-executiong-r-code" class="nav-link active" data-scroll-target="#file-formats-for-editing-and-executiong-r-code"><span class="header-section-number">3.1</span> File formats for editing and executiong R code</a>
+  <li><a href="#where-do-packages-live" id="toc-where-do-packages-live" class="nav-link active" data-scroll-target="#where-do-packages-live"><span class="header-section-number">3.1</span> Where do packages live?</a></li>
+  <li><a href="#alternatives-to-cran" id="toc-alternatives-to-cran" class="nav-link" data-scroll-target="#alternatives-to-cran"><span class="header-section-number">3.2</span> Alternatives to CRAN</a>
   <ul class="collapse">
-  <li><a href="#r-scripts" id="toc-r-scripts" class="nav-link" data-scroll-target="#r-scripts"><span class="header-section-number">3.1.1</span> R scripts</a></li>
+  <li><a href="#bioconductor" id="toc-bioconductor" class="nav-link" data-scroll-target="#bioconductor"><span class="header-section-number">3.2.1</span> Bioconductor</a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github"><span class="header-section-number">3.2.2</span> GitHub</a></li>
+  <li><a href="#other-alternatives" id="toc-other-alternatives" class="nav-link" data-scroll-target="#other-alternatives"><span class="header-section-number">3.2.3</span> Other alternatives</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dhammarstrom/r-crash-course/edit/master/03-r-packages.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dhammarstrom/r-crash-course/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/dhammarstrom/r-crash-course/blob/master/03-r-packages.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -252,37 +255,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The R ecosystem consists of packages. These are collections of functions organized in a systematic manner. Functions are created to perform a specialized task. And packages often have many function used to do e.g.&nbsp;analyses of a specific kind of data, or more general task such as making figures or handle data.</p>
-<p>In this course we will use many different packages, for example <a href="https://dplyr.tidyverse.org/">dplyr</a>, <a href="https://tidyr.tidyverse.org/">tidyr</a> and <a href="https://ggplot2.tidyverse.org/">ggplot2</a>. dplyr and tidyr are packages used to transform and clean data. ggplot2 is used for making figures.</p>
+<p>The R ecosystem consists of packages. These are collections of functions organized in a systematic manner. Functions are created to perform a specialized task, and packages often have many function used to do e.g.&nbsp;analyses of a specific kind of data, or more general task such as making figures or handle data.</p>
+<p>Later in this course we will use many different packages, for example <a href="https://dplyr.tidyverse.org/">dplyr</a>, <a href="https://tidyr.tidyverse.org/">tidyr</a> and <a href="https://ggplot2.tidyverse.org/">ggplot2</a>. dplyr and tidyr are packages used to transform and clean data. ggplot2 is used for making figures.</p>
+<section id="where-do-packages-live" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="where-do-packages-live"><span class="header-section-number">3.1</span> Where do packages live?</h2>
 <p>To install a package, you use the <code>install.packages()</code> function. You only need to do this once on your computer (unless you re-install R). You can write the following code in your console to install dplyr.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Alternatively, click “Packages” and “Install” and search for the package you want to install. To use a package, you have to load it into your environment. Use the <code>library()</code> function to load a package.</p>
+<p>Alternatively, in RStudio, click “Packages” and “Install” and search for the package you want to install. To use a package, you have to load it into your environment. Use the <code>library()</code> function to load a package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The package <code>dplyr</code> has now loaded into your environment, this means that all the functions that are part of the <code>dplyr</code> package are available for R.</p>
-<section id="file-formats-for-editing-and-executiong-r-code" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="file-formats-for-editing-and-executiong-r-code"><span class="header-section-number">3.1</span> File formats for editing and executiong R code</h2>
-<p>A confusing part of using R is that we are really just able to communicate with R through the console. There are however a lot of methods to do this, and save your input, and output for later. This is central to how we will work with R: We create some input (code), R returns results, like numbers, text or figures and these can be formatted to be saved in different formats.</p>
-<section id="r-scripts" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="r-scripts"><span class="header-section-number">3.1.1</span> R scripts</h3>
-<p>The most basic file format for R code is an R script, as we have already touched upon. An R script contains code and comments. Code is executed by R and comments are ignored. Ideally, R scripts are commented to improve readability of what the do. Commenting code is also a good way of creating a roadmap of what you want to do. In the image below (<a href="#fig-rscript" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>), R code is written based on a plan written with comments. Note that when a line starts with at least one <code>#</code> it is interpreted by R as a comment.</p>
-<div id="fig-rscript" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rscript-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/ch3/03-rscript.gif" class="img-fluid figure-img">
+<p>But where do packages comes from? When using <code>install.packages</code>, R will look for a package with the your name in a repository that is defined in your options.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> A repository is in this case a database from which it is possible to download and install R packages. The repository is likely a mirror of a CRAN repository.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;The behavior of R is in many cases dictated by options, one such option is the preferred repository for downloading packages, see <a href="https://search.r-project.org/R/refmans/base/html/options.html">here for details</a></p></div></div></section>
+<section id="alternatives-to-cran" class="level2 page-columns page-full" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="alternatives-to-cran"><span class="header-section-number">3.2</span> Alternatives to CRAN</h2>
+<section id="bioconductor" class="level3 page-columns page-full" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="bioconductor"><span class="header-section-number">3.2.1</span> Bioconductor</h3>
+<p>CRAN (Comprehensive R Archive Network) is the go-to database network for R packages, but there are alternatives. <a href="https://www.bioconductor.org/">Bioconductor</a> collects R packages used in bioinformatics and related fields, and similarly to CRAN we can download packages from Bioconductor using convenient functions. Confusingly, a package named <code>BiocManager</code> is available at CRAN. Using <code>BiocManager::install()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> we can install packages from Bioconductor.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Notice the double colon here (<code>::</code>). This means that we are telling R to look for a function inside a package, specifically, look for the function called <code>install</code> in the <code>BiocManager</code> package. When using <code>::</code> we do not need to load the package to access the function.</p></div></div></section>
+<section id="github" class="level3 page-columns page-full" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="github"><span class="header-section-number">3.2.2</span> GitHub</h3>
+<p>GitHub is a hosts many R packages, some of which will never be submitted to CRAN for different reasons. Packages hosted on GitHub can also be downloaded and installed using a function provided by the <code>remotes</code> package.</p>
+<p>First we need to install <code>remotes</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rscript-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Commenting and coding in an R script
-</figcaption>
-</figure>
+<p>Next we can use <code>remotes</code> to install a package we will use later, a package that contains datasets, the <code>exscidata</code> package<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;See <a href="https://github.com/dhammarstrom/exscidata">here</a> for the GitHub repository where the package live.</p></div></div><p>We load the <code>remotes</code> package and we can directly download, and install the package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(remotes)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"dhammarstrom/exscidata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="other-alternatives" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="other-alternatives"><span class="header-section-number">3.2.3</span> Other alternatives</h3>
+<p>In addition to CRAN, BioConductor and GitHub, R packages are hosted on <a href="https://ropensci.org/">rOpenSci</a> which is a platform for hosting peer-reviewed R packages. These can also be hosted on CRAN or BioConductor, and at the same time be hosted on GitHub whit a developmental version. Similarly to GitHub, <a href="https://about.gitlab.com/">Gitlab</a> and <a href="https://bitbucket.org/">Bitbucket</a> provides possibilities for hosting packages which can be installed using functions in the <code>remotes</code> package.</p>
 
 
 </section>
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -837,8 +852,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04-quarto-basic.html" class="pagination-link" aria-label="04-quarto-basic.html">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">04-quarto-basic.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04-quarto-basic.html" class="pagination-link" aria-label="Reproducible reports, projects and quarto">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible reports, projects and quarto</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -160,7 +194,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-quarto-basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">04-quarto-basic.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible reports, projects and quarto</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -211,18 +245,23 @@ div.csl-indent {
   <ul>
   <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r"><span class="header-section-number">1.1</span> R</a></li>
   <li><a href="#rtools" id="toc-rtools" class="nav-link" data-scroll-target="#rtools"><span class="header-section-number">1.2</span> Rtools</a></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="header-section-number">1.3</span> RStudio</a>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="header-section-number">1.3</span> RStudio</a></li>
+  <li><a href="#the-anatomy-of-rstudio" id="toc-the-anatomy-of-rstudio" class="nav-link" data-scroll-target="#the-anatomy-of-rstudio"><span class="header-section-number">1.4</span> The Anatomy of RStudio</a>
   <ul class="collapse">
-  <li><a href="#a-first-look-at-rstudio" id="toc-a-first-look-at-rstudio" class="nav-link" data-scroll-target="#a-first-look-at-rstudio"><span class="header-section-number">1.3.1</span> A first look at RStudio</a></li>
+  <li><a href="#the-source-editor" id="toc-the-source-editor" class="nav-link" data-scroll-target="#the-source-editor"><span class="header-section-number">1.4.1</span> The source editor</a></li>
+  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment"><span class="header-section-number">1.4.2</span> Environment</a></li>
+  <li><a href="#the-console" id="toc-the-console" class="nav-link" data-scroll-target="#the-console"><span class="header-section-number">1.4.3</span> The console</a></li>
+  <li><a href="#files-plots-packages-and-help-files" id="toc-files-plots-packages-and-help-files" class="nav-link" data-scroll-target="#files-plots-packages-and-help-files"><span class="header-section-number">1.4.4</span> Files, plots, packages and help files</a></li>
   </ul></li>
-  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github"><span class="header-section-number">1.4</span> Git and Github</a>
+  <li><a href="#reproducible-data-science-using-rstudio" id="toc-reproducible-data-science-using-rstudio" class="nav-link" data-scroll-target="#reproducible-data-science-using-rstudio"><span class="header-section-number">1.5</span> Reproducible data science using RStudio</a></li>
+  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github"><span class="header-section-number">1.6</span> Git and Github</a>
   <ul class="collapse">
-  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account"><span class="header-section-number">1.4.1</span> Create a GitHub account</a></li>
-  <li><a href="#download-and-install-github-cli" id="toc-download-and-install-github-cli" class="nav-link" data-scroll-target="#download-and-install-github-cli"><span class="header-section-number">1.4.2</span> Download and install GitHub CLI</a></li>
+  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account"><span class="header-section-number">1.6.1</span> Create a GitHub account</a></li>
+  <li><a href="#download-and-install-github-cli" id="toc-download-and-install-github-cli" class="nav-link" data-scroll-target="#download-and-install-github-cli"><span class="header-section-number">1.6.2</span> Download and install GitHub CLI</a></li>
   </ul></li>
-  <li><a href="#setting-up-git-and-github" id="toc-setting-up-git-and-github" class="nav-link" data-scroll-target="#setting-up-git-and-github"><span class="header-section-number">1.5</span> Setting up Git and GitHub</a></li>
-  <li><a href="#quarto-and-friends" id="toc-quarto-and-friends" class="nav-link" data-scroll-target="#quarto-and-friends"><span class="header-section-number">1.6</span> Quarto and friends</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.7</span> Summary</a></li>
+  <li><a href="#setting-up-git-and-github" id="toc-setting-up-git-and-github" class="nav-link" data-scroll-target="#setting-up-git-and-github"><span class="header-section-number">1.7</span> Setting up Git and GitHub</a></li>
+  <li><a href="#quarto-and-friends" id="toc-quarto-and-friends" class="nav-link" data-scroll-target="#quarto-and-friends"><span class="header-section-number">1.8</span> Quarto and friends</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">1.9</span> Summary</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dhammarstrom/r-crash-course/edit/master/01-software.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dhammarstrom/r-crash-course/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/dhammarstrom/r-crash-course/blob/master/01-software.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -274,12 +313,78 @@ div.csl-indent {
 <li>Scroll down and find the <a href="https://posit.co/products/open-source/rstudio/">Open Source Edition</a></li>
 <li>Download the installer made for your operating system.</li>
 </ol>
-<section id="a-first-look-at-rstudio" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="a-first-look-at-rstudio"><span class="header-section-number">1.3.1</span> A first look at RStudio</h3>
+</section>
+<section id="the-anatomy-of-rstudio" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="the-anatomy-of-rstudio"><span class="header-section-number">1.4</span> The Anatomy of RStudio</h2>
+<p>The appearance of RStudio can be changed for a more pleasant user experience. I like a dark theme as it is easier on the eye. We can also move the different components of RStudio. I like to have the console on the top right and the source on the top left. I think this makes it easier to see output when coding interactively. All this will be clearer as thing evolve, but for now, start R Studio, go to Tools &gt; Global options and make it personal (see <a href="#fig-customize" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>)!</p>
+<div id="fig-customize" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-customize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch3/03-customizerstudio.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-customize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Customize the appearance of RStudio
+</figcaption>
+</figure>
+</div>
+<p>As you may have spotted in the image above, it is possible to change the font of your editor. I like <a href="https://github.com/tonsky/FiraCode/wiki/RStudio-instructions">Fira code</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Defining concepts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source editor</strong>: Is where scripts are edited.</p>
+<p><strong>Environment</strong>: In R, the environment is where data variables and structures are saved during execution of code.</p>
+<p><strong>Script</strong>: Your script is the document containing your computer code. This is your computer program (using a loose definition of a software program).</p>
+<p><strong>Variables</strong>: In R, variables are containers for data values.</p>
+<p><strong>Workspace</strong>: This is your environments as represented on your computer. A workspace can be, but should not be saved between sessions.</p>
+</div>
+</div>
+<section id="the-source-editor" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="the-source-editor"><span class="header-section-number">1.4.1</span> The source editor</h3>
+<p>The source editor is where you edit your code. When writing your code in a text-file, you can call it a script, this is essentially a computer program where you tell R what to do. It is executed from top to bottom. You can send one line of code, multiple lines or whole sections into R. In the image below (<a href="#fig-interactionrstudio" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>), the source window is in the top left corner.</p>
+</section>
+<section id="environment" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="environment"><span class="header-section-number">1.4.2</span> Environment</h3>
+<p>The environment is where all your objects are located. Objects can be variables or data sets that you are working with. In RStudio the environment is listed under the environment tab (bottom left in the image).</p>
+<p>Copy the code below to a R script. To run it line by line, set your cursor on the first line a press Ctrl+Enter. What happened in your environment? Press Ctrl+Enter again and you will see a plot in the plot window. Amazing stuff!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-console" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="the-console"><span class="header-section-number">1.4.3</span> The console</h3>
+<p>By pressing Ctrl+Enter from the script, as described above, you sent your code to the console. You can also interact with R directly here. By writing <code>a</code> in the console and hitting enter you will get the value from the object called a. This means that it is also where output from R is usually printed. In the image below, the console is in the top right corner.</p>
+</section>
+<section id="files-plots-packages-and-help-files" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="files-plots-packages-and-help-files"><span class="header-section-number">1.4.4</span> Files, plots, packages and help files</h3>
+<p>In RStudio files are accessible from the Files tab. The files tab shows the files in you root folder. The root folder is where R will search for files if you tell it to. We will talk more about the root folder later in connection with projects. Plots are displayed in the Plot tab. Packages are listed in the packages tab. If you access the help files, these will be displayed in the help tab. In the image below all these tabs are in the bottom right corner. More on help files and packages later.</p>
+<div id="fig-interactionrstudio" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-interactionrstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch3/03-interactingrstudio.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-interactionrstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Interacting with RStudio
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
-<section id="git-and-github" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="git-and-github"><span class="header-section-number">1.4</span> Git and Github</h2>
+<section id="reproducible-data-science-using-rstudio" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="reproducible-data-science-using-rstudio"><span class="header-section-number">1.5</span> Reproducible data science using RStudio</h2>
+<p>When starting to work more systematically in RStudio we will set some rules that will allow for reproducible programming. Remember from <a href="01-intro-to-data.html#replication-and-reproducibility">Chapter 2</a> that part of a fully reproducible study is software/code that produces the results. It turns out that when working interactively with R you can fool yourself to believe that you have included all steps needed to produce some results in your script. However, variables may be stored in your environment but not by assigning values to them in your script. This will become a problem if you want to share your code, a certain value/variable needed to make the program work may be missing from your script.</p>
+<p>To avoid making such a mistake it is good practice not to save variables in your environment between sessions, everything should be scripted and documented and assumed not defined elsewhere. In RStudio we can make an explicit setting Not to save the workspace (See <span class="quarto-unresolved-ref">?fig-saveworkspace</span>).</p>
+</section>
+<section id="git-and-github" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="git-and-github"><span class="header-section-number">1.6</span> Git and Github</h2>
 <p>Git is a software that you need to install on your system in order to enable version control. There are alternatives but git is likely the most used freely available softwrae. Github is a web platform that allows collaboration and web-based storage of your work. First, we will install git.</p>
 <p>For windows:</p>
 <ol type="1">
@@ -297,24 +402,24 @@ div.csl-indent {
 <p>Additional warnings might appear indicating that you’ll need some extra software. More specifically, you might need Xcode command line tools. To install these, go to your terminal and enter</p>
 <p><code>xcode-select --install</code></p>
 <p>If you had problems with the homebrew installation itself or the brew installation of git before, try again after installing xcode command line tools.</p>
-<section id="create-a-github-account" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="create-a-github-account"><span class="header-section-number">1.4.1</span> Create a GitHub account</h3>
+<section id="create-a-github-account" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="create-a-github-account"><span class="header-section-number">1.6.1</span> Create a GitHub account</h3>
 <p>The first thing to do is to establish a GitHub account.</p>
 <ol type="1">
 <li>Go to <a href="https://github.com/">github.com</a> and click “Sign up”.</li>
 <li>Select a suitable user name and a plan, there is a free alternative.</li>
 </ol>
 </section>
-<section id="download-and-install-github-cli" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="download-and-install-github-cli"><span class="header-section-number">1.4.2</span> Download and install GitHub CLI</h3>
+<section id="download-and-install-github-cli" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="download-and-install-github-cli"><span class="header-section-number">1.6.2</span> Download and install GitHub CLI</h3>
 <p>The easiste way to set up your GitHub client is to use GitHub CLI. GitHub CLI is a collection of commands that will be available on the command line after installing the software. These commands include setting up the connection between your computer and Github.com. But they also contains commands for day-to-day version control.</p>
 <ul>
 <li>Go to <a href="https://cli.github.com/">cli.github.com/</a> and select the download alternative for your setup. There are several alternatives for installing GitHub CLI, <a href="https://github.com/cli/cli?tab=readme-ov-file#installation">see here</a>.</li>
 </ul>
 </section>
 </section>
-<section id="setting-up-git-and-github" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="setting-up-git-and-github"><span class="header-section-number">1.5</span> Setting up Git and GitHub</h2>
+<section id="setting-up-git-and-github" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="setting-up-git-and-github"><span class="header-section-number">1.7</span> Setting up Git and GitHub</h2>
 <p>First we will let RStudio know where git is located</p>
 <ul>
 <li>Open RStudio, go to <em>Global Options</em> under the <em>Tools</em> menu. Go to the <em>Git/SVN</em> sub-menu and find the folder where git.exe is located by browsing in the <em>“Git executable”</em> field.</li>
@@ -330,8 +435,8 @@ div.csl-indent {
 </ul>
 <p>Done!</p>
 </section>
-<section id="quarto-and-friends" class="level2 page-columns page-full" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="quarto-and-friends"><span class="header-section-number">1.6</span> Quarto and friends</h2>
+<section id="quarto-and-friends" class="level2 page-columns page-full" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="quarto-and-friends"><span class="header-section-number">1.8</span> Quarto and friends</h2>
 <p>The R community has pioneered literate programming for data analysis by early adoption of file formats that lets the user combine computer code and output with text <span class="citation" data-cites="peng2006">(<a href="#ref-peng2006" role="doc-biblioref">Peng, Dominici, and Zeger 2006</a>)</span>. A well adopted file format in recent years have been <a href="https://rmarkdown.rstudio.com/">R markdown</a> which combines R code with text and lets the user compile reports in multiple output formats from a source document. R markdown is an “R-centric” approach to literate programming. Even though it lets you combine multiple computer languages, all code execution goes through R. Recently, a new format was introduced, <a href="https://quarto.org/">Quarto</a>, which is not executed through R but its own dedicated software, Quarto.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-peng2006" class="csl-entry" role="listitem">
 Peng, R. D., F. Dominici, and S. L. Zeger. 2006. <span>“Reproducible Epidemiologic Research.”</span> Journal Article. <em>Am J Epidemiol</em> 163 (9): 783–89. <a href="https://doi.org/10.1093/aje/kwj093">https://doi.org/10.1093/aje/kwj093</a>.
@@ -348,8 +453,8 @@ Peng, R. D., F. Dominici, and S. L. Zeger. 2006. <span>“Reproducible Epidemiol
 </ol>
 <p>You should be ready to go now!</p>
 </section>
-<section id="summary" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.7</span> Summary</h2>
+<section id="summary" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.9</span> Summary</h2>
 <p>In this first “lesson” we have installed R, RStudio, git, GitHub CLI, quarto and tinytex. You have also created a github account. These are the tools that you will need to go further in this course. But what if you run into problems? Do not worry, the internet is at your service! A lot of people work very hard to make it easy for beginners to adopt their tools. Documentation of the tools we have installed so far is available through google or any other search engine. People are also very helpful in answering questions, answers to large and small problems can be found in forums such as <a href="https://stackoverflow.com/">stack overflow</a>.</p>
 
 

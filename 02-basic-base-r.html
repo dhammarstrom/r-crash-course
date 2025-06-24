@@ -1776,7 +1776,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-quarto-basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">04-quarto-basic.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducible reports, projects and quarto</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1834,6 +1834,10 @@ window.Quarto = {
   <li><a href="#combining-data" id="toc-combining-data" class="nav-link" data-scroll-target="#combining-data"><span class="header-section-number">2.3</span> Combining data</a></li>
   <li><a href="#logical-operations-and-conditions" id="toc-logical-operations-and-conditions" class="nav-link" data-scroll-target="#logical-operations-and-conditions"><span class="header-section-number">2.4</span> Logical operations and conditions</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">2.5</span> Functions</a></li>
+  <li><a href="#file-formats-for-editing-and-executiong-r-code" id="toc-file-formats-for-editing-and-executiong-r-code" class="nav-link" data-scroll-target="#file-formats-for-editing-and-executiong-r-code"><span class="header-section-number">2.6</span> File formats for editing and executiong R code</a>
+  <ul class="collapse">
+  <li><a href="#r-scripts" id="toc-r-scripts" class="nav-link" data-scroll-target="#r-scripts"><span class="header-section-number">2.6.1</span> R scripts</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dhammarstrom/r-crash-course/edit/master/02-basic-base-r.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dhammarstrom/r-crash-course/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/dhammarstrom/r-crash-course/blob/master/02-basic-base-r.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -2323,9 +2327,28 @@ my_values &gt; 5 | colors == "green"
 <p>Of course, there is already a function that will give you the mean of a numeric vector and it is called <code>mean()</code>. In the simple case, the <code>mean()</code> function takes one argument <code>x</code> that should be a numeric vector. It could look like this:</p>
 <pre class="{web-r}"><code>mean(my_values) # Calculate the mean of your vector.</code></pre>
 <p>Defining functions for yourself can be a very efficient way of performing data analysis, but most functions that you need are already specified in R. Other people have already gone trough the trouble of defining functions that are easy to use for specific tasks. In the next lesson we will explore the package handling system in R.</p>
+</section>
+<section id="file-formats-for-editing-and-executiong-r-code" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="file-formats-for-editing-and-executiong-r-code"><span class="header-section-number">2.6</span> File formats for editing and executiong R code</h2>
+<p>A confusing part of using R is that we are really just able to communicate with R through the console. There are however a lot of methods to do this, and save your input, and output for later. This is central to how we will work with R: We create some input (code), R returns results, like numbers, text or figures and these can be formatted to be saved in different formats.</p>
+<section id="r-scripts" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="r-scripts"><span class="header-section-number">2.6.1</span> R scripts</h3>
+<p>The most basic file format for R code is an R script, as we have already touched upon. An R script contains code and comments. Code is executed by R and comments are ignored. Ideally, R scripts are commented to improve readability of what the do. Commenting code is also a good way of creating a roadmap of what you want to do. In the image below (<a href="#fig-rscript" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>), R code is written based on a plan written with comments. Note that when a line starts with at least one <code>#</code> it is interpreted by R as a comment.</p>
+<div id="fig-rscript" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rscript-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch3/03-rscript.gif" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rscript-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Commenting and coding in an R script
+</figcaption>
+</figure>
+</div>
+<p>Later we will introduce another format, a format that enables combining R code with prose, tables, figures and more.</p>
 
 
 
+</section>
 </section>
 
 
