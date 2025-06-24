@@ -1,0 +1,33 @@
+# Packages are where functions live
+
+The R ecosystem consists of packages. These are collections of functions organized in a systematic manner. Functions are created to perform a specialized task. And packages often have many function used to do e.g. analyses of a specific kind of data, or more general task such as making figures or handle data.
+
+In this course we will use many different packages, for example [dplyr](https://dplyr.tidyverse.org/), [tidyr](https://tidyr.tidyverse.org/) and [ggplot2](https://ggplot2.tidyverse.org/). dplyr and tidyr are packages used to transform and clean data. ggplot2 is used for making figures.
+
+To install a package, you use the `install.packages()` function. You only need to do this once on your computer (unless you re-install R). You can write the following code in your console to install dplyr.
+
+```{r, eval = FALSE}
+install.packages("dplyr")
+```
+
+Alternatively, click "Packages" and "Install" and search for the package you want to install. To use a package, you have to load it into your environment. Use the `library()` function to load a package.
+
+```{r, eval = FALSE}
+library("dplyr")
+```
+
+The package `dplyr` has now loaded into your environment, this means that all the functions that are part of the `dplyr` package are available for R.
+
+
+
+
+
+## File formats for editing and executiong R code
+
+A confusing part of using R is that we are really just able to communicate with R through the console. There are however a lot of methods to do this, and save your input, and output for later. This is central to how we will work with R: We create some input (code), R returns results, like numbers, text or figures and these can be formatted to be saved in different formats.
+
+### R scripts
+
+The most basic file format for R code is an R script, as we have already touched upon. An R script contains code and comments. Code is executed by R and comments are ignored. Ideally, R scripts are commented to improve readability of what the do. Commenting code is also a good way of creating a roadmap of what you want to do. In the image below (@fig-rscript), R code is written based on a plan written with comments. Note that when a line starts with at least one `#` it is interpreted by R as a comment.     
+
+![Commenting and coding in an R script](images/ch3/03-rscript.gif){#fig-rscript}

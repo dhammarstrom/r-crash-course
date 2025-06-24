@@ -1,0 +1,33 @@
+project:
+  type: book
+
+book:
+  title: "A Crash Course in R"
+  author: "Daniel Hammarström"
+  date: "2025-06-23"
+  search: true
+  repo-url: https://github.com/dhammarstrom/r-crash-course
+  repo-branch: master
+  repo-actions: [edit, issue, source]
+  downloads: [epub]
+  chapters:
+    - index.qmd
+    - 01-software.qmd
+    - 02-basic-base-r.qmd
+    - 03-r-packages.qmd
+    - 04-quarto-basic.qmd
+    - 05-quarto-figures.qmd
+    - 06-quarto-tables.qmd
+    - 07-import-data.qmd
+    - 08-loops-and-apply.qmd
+    - 09-functions.qmd
+    - 10-git.qmd
+bibliography: resources/bibliography.bib
+format:
+  html:
+    reference-location: margin
+    citation-location: margin
+    footnotes-hover: false
+    theme:
+      light: flatly
+      dark: darkly

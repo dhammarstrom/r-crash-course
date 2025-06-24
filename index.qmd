@@ -1,0 +1,20 @@
+# What, Why and How? {.unnumbered}
+
+## What?
+
+This website is a crash course in the R programming language. The Course is intended for students or researchers with little or no programming, statistics, or data science background who need to learn to use R as a research tool. The course can be used for a linear learning experience, from the first to the last chapter, or as a reference for specific problems. 
+
+## Why?
+
+Why would you want to learn R and does it matter for going trough this course? Yes, it matters. R with auxillary software is a super flexible and powerful enrvironment and ecosystem for statistics and data science. It makes it possible to develop cutom analyses for your specif research question. The R ecosystem is also leading in providing tools for reproducible analyses. Creating a reproducible analysis means that you can show other what you have done. This course introduces R in the context of being a tool for reproducible scientific work.
+
+## How? 
+
+The course is structured around the basics of getting to use R in everyday scientific work (e.g., writing a master's thesis or a research paper). 
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+# Setting up your software environment
+
+There are multiple computer languages and software solutions that could satisfy our needs. However, we will focus on a combination of continuously improved tools that makes it easy for the user to perform data analyses, collaborate on doing them, communicate the process and results, and to do all this in a reproducible manner. This first chapter is basically a check-list of what you must install on your system to take full advantage of the proposed tools.
+
+## R
+
+**R** is a free, [open-source](https://en.wikipedia.org/wiki/Open_source) software designed for statistical computing. We will use R as a part of an environment (using RStudio, introduced below). To download and install R:
+
+1.  Go to [The Comprehensive R Archive Network](https://cran.r-project.org/),[^cran]
+
+2.  Select your operating system (Download R for Windows, MacOS or Linux).
+
+    -   If you have Windows, choose `base`, click on "Download R (...) for windows", save and run the file. The installation process should be self explanatory.
+    -   If you have MacOS, download and install the latest release.
+    
+3. Run the installer to install R.
+
+[^cran]: What is CRAN? See [here for the FAQ answer](https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-CRAN_003f-1). Basically, this is the website that keep the latest version of R and many of the extensions (R packages) that you will use when working with R. A major advantage of using R over other similar solutions is the well maintained package system, making it easy to install and understand user-contributed packages.   
+
+
+## Rtools
+
+[Rtools](https://cran.r-project.org/) is used when you build your own R packages (more on that later), and when using some advanced software packages that talk to R, like [Stan](https://mc-stan.org/install/index.html). If you only imagine basic use of R and related software, Rtools is not strictly needed, and you could install it later.
+
+
+## RStudio
+
+
+**[RStudio](https://www.posit.co/)** is a software designed to make it easier to use R. It is free to download and use. It is designed as an **integrated development environment** that lets you organize your work together with R and other tools. Install it by going to <https://www.posit.co/>.
+
+1.  Select "Open Source" and **RStudio IDE**
+2.  Scroll down and find the [Open Source Edition](https://posit.co/products/open-source/rstudio/)
+3.  Download the installer made for your operating system.
+
+### A first look at RStudio
+
+
+
+## Git and Github
+
+Git is a software that you need to install on your system in order to enable version control. There are alternatives but git is likely the most used freely available softwrae. Github is a web platform that allows collaboration and web-based storage of your work. First, we will install git.
+
+For windows:
+
+1. If you have Windows, Go to [https://git-scm.com/downloads](https://git-scm.com/downloads) and download the latest version for your operating system.
+
+2. Run the installer. Make a note of where you installed it!
+
+
+For Mac:
+
+1. If you are on Mac, the easiest thing is to first install [*Homebrew*](https://brew.sh/), this will make it easy to get the latest version of what we will need. Go to [https://brew.sh/](https://brew.sh/) and follow the instructions. Note that you will need to open the terminal and enter the install command.
+
+2. Install git by entering the follwing command in a freshly opened terminal:
+
+`brew install git`
+
+Check if git was installed by restarting the terminal and write
+
+`git --version`
+
+Additional warnings might appear indicating that you'll need some extra software. More specifically, you might need Xcode command line tools. To install these, go to your terminal and enter
+
+`xcode-select --install`
+
+If you had problems with the homebrew installation itself or the brew installation of git before, try again after installing xcode command line tools. 
+
+
+### Create a GitHub account
+
+The first thing to do is to establish a GitHub account. 
+
+1. Go to [github.com](https://github.com/) and click "Sign up".
+2. Select a suitable user name and a plan, there is a free alternative.
+
+### Download and install GitHub CLI
+
+The easiste way to set up your GitHub client is to use GitHub CLI. GitHub CLI is a collection of commands that will be available on the command line after installing the software. These commands include setting up the connection between your computer and Github.com. But they also contains commands for day-to-day version control.
+
+- Go to [cli.github.com/](https://cli.github.com/) and select the download alternative for your setup. There are several alternatives for installing GitHub CLI, [see here](https://github.com/cli/cli?tab=readme-ov-file#installation).
+
+
+## Setting up Git and GitHub
+
+
+First we will let RStudio know where git is located
+
+- Open RStudio, go to *Global Options* under the *Tools* menu. Go to the *Git/SVN* sub-menu and find the folder where git.exe is located by browsing in the *"Git executable"* field.
+
+**On windows:**
+
+If you have installed git using default settings your `git.exe` should be located in `C:/Program Files/Git/bin/git.exe`.
+
+**On Mac**:
+
+If you have installed git using homebrew, your git version *may* be found in `/usr/local/bin/git`.
+
+Next we need to connect our git software to github. This is done by *authentication*. [There are several options](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github), however below are one option that should work right away! We will take advantage of the neewly installed GitHub CLI.
+
+To perform the authentication process:
+
+- Open a terminal and type `gh auth login`, follow the instructions. 
+
+Done!
+
+
+## Quarto and friends
+
+The R community has pioneered literate programming for data analysis by early adoption of file formats that lets the user combine computer code and output with text [@peng2006]. A well adopted file format in recent years have been [R markdown](https://rmarkdown.rstudio.com/) which combines R code with text and lets the user compile reports in multiple output formats from a source document. R markdown is an "R-centric" approach to literate programming. Even though it lets you combine multiple computer languages, all code execution goes through R. Recently, a new format was introduced, [Quarto](https://quarto.org/), which is not executed through R but its own dedicated software, Quarto. 
+
+Rmarkdown and Quarto have many similarities in that you can use markdown, a well established [markup language](https://en.wikipedia.org/wiki/Markdown) to format text with a plain text editor (like notepad). This means that for the R user, most differences between RMarkdown and quarto in formatting your documents are irrelevant for getting started.
+
+As quarto authoring requires its own software, we need to do some installation.
+
+1. Go to [quarto.org](https://quarto.org/)
+2. Click "*Get Started*" and follow the instructions for downloading Quarto CLI. 
+
+A nice output from a quarto source documents is a PDF. In order to create PDFs using R/RStudio/quarto we need to install a version of the typesetting system [TeX](https://en.wikipedia.org/wiki/TeX). Quarto recommends[^12] using [tinytex](https://yihui.org/tinytex/) which is easily installed after you have installed quarto.
+
+1. Open up RStudio and a fresh terminal
+2. type `quarto install tinytex` and follow the instructions. 
+
+You should be ready to go now!
+
+[^12]: See the quarto documentation for details on creating pdfs and installing TeX distributions https://quarto.org/docs/output-formats/pdf-basics.html
+
+
+## Summary
+
+In this first "lesson" we have installed R, RStudio, git, GitHub CLI, quarto and tinytex. You have also created a github account. These are the tools that you will need to go further in this course. But what if you run into problems? Do not worry, the internet is at your service! A lot of people work very hard to make it easy for beginners to adopt their tools. Documentation of the tools we have installed so far is available through google or any other search engine. People are also very helpful in answering questions, answers to large and small problems can be found in forums such as [stack overflow](https://stackoverflow.com/). 
+
+
+

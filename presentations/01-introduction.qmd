@@ -1,0 +1,54 @@
+---
+title: "A Crash Course in R"
+subtitle: "What, Why and How?"
+format: 
+  inneng-revealjs
+editor: visual
+footer: ""
+---
+
+## What? {.theme-title1}
+
+:::: {.incremental .highlight-last-green}
+::: slide-content
+- This short course introduces R and friends!
+:::
+::::
+
+
+## Why?
+
+
+## How?
+
+
+
+
+
+## Title slide 1 {.theme-title1}
+
+:::: {.incremental .highlight-last-green}
+::: slide-content
+-   The `.incremental` and `.highlight-last-green` classes can be combined on the white background `.theme-title1`
+-   The `slide-content` class restricts the width of the text box.
+:::
+::::
+
+## Title slide 2 {.theme-title2}
+
+::: {.incremental .highlight-last-black}
+-   The `.highlight-last-black` is more suitable on the dark green background
+-   This will also highlight the most current bullet-point
+:::
+
+## Title slide 4 {.theme-title3 .smaller}
+
+-   Use the `.smaller` class to make text smaller, suitable if you have a lot of content
+
+## 
+
+::: r-fit-text
+Fit text to <br>the whole screen
+:::
+
+##  {.theme-logo1}
