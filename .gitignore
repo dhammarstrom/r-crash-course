@@ -21,6 +21,7 @@
 # Any _book or _docs folder
 /_book/
 /_docs/
+/_site/
 
 
 # RStudio files
