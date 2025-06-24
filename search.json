@@ -1,0 +1,202 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A Crash Course in R",
+    "section": "",
+    "text": "What, Why and How?",
+    "crumbs": [
+      "What, Why and How?"
+    ]
+  },
+  {
+    "objectID": "index.html#what",
+    "href": "index.html#what",
+    "title": "A Crash Course in R",
+    "section": "What?",
+    "text": "What?\nThis website is a crash course in the R programming language. The Course is intended for students or researchers with little or no programming, statistics, or data science background who need to learn to use R as a research tool. The course can be used for a linear learning experience, from the first to the last chapter, or as a reference for specific problems.",
+    "crumbs": [
+      "What, Why and How?"
+    ]
+  },
+  {
+    "objectID": "index.html#why",
+    "href": "index.html#why",
+    "title": "A Crash Course in R",
+    "section": "Why?",
+    "text": "Why?\nWhy would you want to learn R and does it matter for going trough this course? Yes, it matters. R with auxillary software is a super flexible and powerful enrvironment and ecosystem for statistics and data science. It makes it possible to develop cutom analyses for your specif research question. The R ecosystem is also leading in providing tools for reproducible analyses. Creating a reproducible analysis means that you can show other what you have done. This course introduces R in the context of being a tool for reproducible scientific work.",
+    "crumbs": [
+      "What, Why and How?"
+    ]
+  },
+  {
+    "objectID": "index.html#how",
+    "href": "index.html#how",
+    "title": "A Crash Course in R",
+    "section": "How?",
+    "text": "How?\nThe course is structured around the basics of getting to use R in everyday scientific work (e.g., writing a master’s thesis or a research paper).",
+    "crumbs": [
+      "What, Why and How?"
+    ]
+  },
+  {
+    "objectID": "01-software.html",
+    "href": "01-software.html",
+    "title": "1  Setting up your software environment",
+    "section": "",
+    "text": "1.1 R\nThere are multiple computer languages and software solutions that could satisfy our needs. However, we will focus on a combination of continuously improved tools that makes it easy for the user to perform data analyses, collaborate on doing them, communicate the process and results, and to do all this in a reproducible manner. This first chapter is basically a check-list of what you must install on your system to take full advantage of the proposed tools.\nR is a free, open-source software designed for statistical computing. We will use R as a part of an environment (using RStudio, introduced below). To download and install R:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "01-software.html#r",
+    "href": "01-software.html#r",
+    "title": "1  Setting up your software environment",
+    "section": "",
+    "text": "Go to The Comprehensive R Archive Network,1\nSelect your operating system (Download R for Windows, MacOS or Linux).\n\nIf you have Windows, choose base, click on “Download R (…) for windows”, save and run the file. The installation process should be self explanatory.\nIf you have MacOS, download and install the latest release.\n\nRun the installer to install R.\n\n1 What is CRAN? See here for the FAQ answer. Basically, this is the website that keep the latest version of R and many of the extensions (R packages) that you will use when working with R. A major advantage of using R over other similar solutions is the well maintained package system, making it easy to install and understand user-contributed packages.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "01-software.html#rtools",
+    "href": "01-software.html#rtools",
+    "title": "1  Setting up your software environment",
+    "section": "1.2 Rtools",
+    "text": "1.2 Rtools\nRtools is used when you build your own R packages (more on that later), and when using some advanced software packages that talk to R, like Stan. If you only imagine basic use of R and related software, Rtools is not strictly needed, and you could install it later.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "01-software.html#rstudio",
+    "href": "01-software.html#rstudio",
+    "title": "1  Setting up your software environment",
+    "section": "1.3 RStudio",
+    "text": "1.3 RStudio\nRStudio is a software designed to make it easier to use R. It is free to download and use. It is designed as an integrated development environment that lets you organize your work together with R and other tools. Install it by going to https://www.posit.co/.\n\nSelect “Open Source” and RStudio IDE\nScroll down and find the Open Source Edition\nDownload the installer made for your operating system.\n\n\n1.3.1 A first look at RStudio",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "01-software.html#git-and-github",
+    "href": "01-software.html#git-and-github",
+    "title": "1  Setting up your software environment",
+    "section": "1.4 Git and Github",
+    "text": "1.4 Git and Github\nGit is a software that you need to install on your system in order to enable version control. There are alternatives but git is likely the most used freely available softwrae. Github is a web platform that allows collaboration and web-based storage of your work. First, we will install git.\nFor windows:\n\nIf you have Windows, Go to https://git-scm.com/downloads and download the latest version for your operating system.\nRun the installer. Make a note of where you installed it!\n\nFor Mac:\n\nIf you are on Mac, the easiest thing is to first install Homebrew, this will make it easy to get the latest version of what we will need. Go to https://brew.sh/ and follow the instructions. Note that you will need to open the terminal and enter the install command.\nInstall git by entering the follwing command in a freshly opened terminal:\n\nbrew install git\nCheck if git was installed by restarting the terminal and write\ngit --version\nAdditional warnings might appear indicating that you’ll need some extra software. More specifically, you might need Xcode command line tools. To install these, go to your terminal and enter\nxcode-select --install\nIf you had problems with the homebrew installation itself or the brew installation of git before, try again after installing xcode command line tools.\n\n1.4.1 Create a GitHub account\nThe first thing to do is to establish a GitHub account.\n\nGo to github.com and click “Sign up”.\nSelect a suitable user name and a plan, there is a free alternative.\n\n\n\n1.4.2 Download and install GitHub CLI\nThe easiste way to set up your GitHub client is to use GitHub CLI. GitHub CLI is a collection of commands that will be available on the command line after installing the software. These commands include setting up the connection between your computer and Github.com. But they also contains commands for day-to-day version control.\n\nGo to cli.github.com/ and select the download alternative for your setup. There are several alternatives for installing GitHub CLI, see here.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "01-software.html#setting-up-git-and-github",
+    "href": "01-software.html#setting-up-git-and-github",
+    "title": "1  Setting up your software environment",
+    "section": "1.5 Setting up Git and GitHub",
+    "text": "1.5 Setting up Git and GitHub\nFirst we will let RStudio know where git is located\n\nOpen RStudio, go to Global Options under the Tools menu. Go to the Git/SVN sub-menu and find the folder where git.exe is located by browsing in the “Git executable” field.\n\nOn windows:\nIf you have installed git using default settings your git.exe should be located in C:/Program Files/Git/bin/git.exe.\nOn Mac:\nIf you have installed git using homebrew, your git version may be found in /usr/local/bin/git.\nNext we need to connect our git software to github. This is done by authentication. There are several options, however below are one option that should work right away! We will take advantage of the neewly installed GitHub CLI.\nTo perform the authentication process:\n\nOpen a terminal and type gh auth login, follow the instructions.\n\nDone!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "01-software.html#quarto-and-friends",
+    "href": "01-software.html#quarto-and-friends",
+    "title": "1  Setting up your software environment",
+    "section": "1.6 Quarto and friends",
+    "text": "1.6 Quarto and friends\nThe R community has pioneered literate programming for data analysis by early adoption of file formats that lets the user combine computer code and output with text (Peng, Dominici, and Zeger 2006). A well adopted file format in recent years have been R markdown which combines R code with text and lets the user compile reports in multiple output formats from a source document. R markdown is an “R-centric” approach to literate programming. Even though it lets you combine multiple computer languages, all code execution goes through R. Recently, a new format was introduced, Quarto, which is not executed through R but its own dedicated software, Quarto.\n\nPeng, R. D., F. Dominici, and S. L. Zeger. 2006. “Reproducible Epidemiologic Research.” Journal Article. Am J Epidemiol 163 (9): 783–89. https://doi.org/10.1093/aje/kwj093.\nRmarkdown and Quarto have many similarities in that you can use markdown, a well established markup language to format text with a plain text editor (like notepad). This means that for the R user, most differences between RMarkdown and quarto in formatting your documents are irrelevant for getting started.\nAs quarto authoring requires its own software, we need to do some installation.\n\nGo to quarto.org\nClick “Get Started” and follow the instructions for downloading Quarto CLI.\n\nA nice output from a quarto source documents is a PDF. In order to create PDFs using R/RStudio/quarto we need to install a version of the typesetting system TeX. Quarto recommends2 using tinytex which is easily installed after you have installed quarto.\n2 See the quarto documentation for details on creating pdfs and installing TeX distributions https://quarto.org/docs/output-formats/pdf-basics.html\nOpen up RStudio and a fresh terminal\ntype quarto install tinytex and follow the instructions.\n\nYou should be ready to go now!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "01-software.html#summary",
+    "href": "01-software.html#summary",
+    "title": "1  Setting up your software environment",
+    "section": "1.7 Summary",
+    "text": "1.7 Summary\nIn this first “lesson” we have installed R, RStudio, git, GitHub CLI, quarto and tinytex. You have also created a github account. These are the tools that you will need to go further in this course. But what if you run into problems? Do not worry, the internet is at your service! A lot of people work very hard to make it easy for beginners to adopt their tools. Documentation of the tools we have installed so far is available through google or any other search engine. People are also very helpful in answering questions, answers to large and small problems can be found in forums such as stack overflow.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your software environment</span>"
+    ]
+  },
+  {
+    "objectID": "02-basic-base-r.html",
+    "href": "02-basic-base-r.html",
+    "title": "2  R basics",
+    "section": "",
+    "text": "2.1 What is R?\nR is a computer software, but it is also a programming language1. The programming language allows us to write computer programs in a language that is especially well suited for data analysis. The software allows for efficient interpretation of the language and the production of, among other things, high quality graphics. In it’s most basic form, R can be thought of as a oversized calculator. In this lesson we will establish this and go further by understanding the basic R syntax.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "02-basic-base-r.html#what-is-r",
+    "href": "02-basic-base-r.html#what-is-r",
+    "title": "2  R basics",
+    "section": "",
+    "text": "1 See here for a more technical definition.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "02-basic-base-r.html#objects-and-assignment",
+    "href": "02-basic-base-r.html#objects-and-assignment",
+    "title": "2  R basics",
+    "section": "2.2 Objects and assignment",
+    "text": "2.2 Objects and assignment\nEverything in R are objects (Chambers 2009). What does this mean? Let’s say that we want to store some information in R, this information is a value, let’s say the number 12. To store this information we will assign the value to an object and call this object twelve. An object is a container of data “of all kinds” (Chambers 2009, 111) that we create in our working memory to hold our data (the value). We assign the value to our object by using an assignment operator. The most common assignment operator is &lt;-. Think of the assignment operator as an arrow pointing from the value towards the object, like this:\n\nChambers, John M. 2009. Software for Data Analysis: Programming with R. Nachdr. Statistics and Computing. New York, NY: Springer.\n\ntwevle &lt;- 12\n\nWe can also reverse the direction of the assignment operator and make the object and value change places.\n\n12 -&gt; twelve\n\nTo call an object, or tell R that we want to look at our object, we would simply type the object name in our R console. We may try this in the R script box below. I have already entered some information in the script, these are comments starting with the hash symbol (#). The comments tells us what to do. You can enter R code on the line below the comments, R will ignore everything following a comment sign and start to interpret code again on the subsequent line. When you have entered your code, press “Run Code” to inspect the results.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIt is also possible to use the equal sign (=) to assign data to objects. The equal sign used as an assignment operator, as in twelve = 12, is equivalent to twelve &lt;- 12.\n\n2.2.1 R as a giant calculator\nR can make use of all basic arithmetic operators like plus (+), minus (-), divided by (*) and multiplied by (/). These operators can be used on objects, and directly on values. In the script box below, try to calculate (and store) the following:\n\\[y = 5 * 2 + 1 * 0.5\\] Then use the object and add 10, store the new result in a new object called z.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nA possible solution to the above challenge would be\n\ny &lt;- 5 * 2 + 1 * 0.5\n\nz &lt;- y + 10\n\nThe result of your computations should be 20.5. In the above example we have discovered that mathematical expression can be written using values and objects already stored in the environment.\nWe can also use functions to perform mathematical operations on objects. Examples of such functions are log(), exp(), abs() and sqrt(). A function is a special object that itself can be use other objects (or variables/values) as input. A function often takes arguments, these arguments are supplied to the function inside its brackets.\nThe log() function returns the natural logarithm of a numeric object. Mathematically, the log function returns the exponent (\\(x\\)) with the base \\(e\\) that give us our input number \\(y\\) (\\(e^x = y\\)). To get the natural logarithm of 100 we would use R and write log(100) which results in 4.6051702. This corresponds to \\(100 = 2.718282 ^ {4.60517}\\). The base \\(e\\) must be raised to the power of 4.60517 to yield 100.\nWhat is the natural logarithm of 50? Try to calculate it in the script box below.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can of course make similar computations on stored objects.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAbove we have learned that numbers and objects that store numbers can be used in computations using basic arithmetic operators and functions that perform mathematical operations.\n\n\n2.2.2 Different types of data\nAbove we have worked on numeric data. These are values represented either as integers (whole numbers; e.g. 1, 2, 3) or what is sometimes called “double” or “numerical”, i.e. decimal numbers (e.g. 1.2 or 2.781).\nIn the code example below we will store an integer and a double and inspect its “class”, the class decides what R can do with an object.\n\nnum &lt;- as.numeric(2.456)\n\nint &lt;- as.integer(2)\n\nclass(num)\nclass(int)\n\nUse the script box below to test out the code example. What is the purpose of the class function?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are other types of data that we can use in R, these are character, logical and complex (we will not discuss complex numbers further here).\nA character or string value can be though of as text, e.g. \"this is a character\" could be the data contained in a character object. A logical value is either TRUE or FALSE. This type of data is also known as Boolean\nAs mentioned above, the type of data restricts what operations that can be performed using the data. For example, we cannot do mathematical operations on characters or logicals. Try out the code below and inspect the results. What does the error message tells you?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can define data types by using functions such as as.numeric() or as.character() these will tell R to try to convert data to a specific type. If this is not possible you will get an error message. Try the code below and inspect the error message.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe result of the conversion of a character to a numeric is NA, that can be read as Not Available. NA is an example of a protected symbol in R. We cannot use this as a name of an object. It is used to indicate missingness, or missing values.\nIn the above section we have identified different types of data that are used in R, next we will try to combine single values into more complex data representations.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "02-basic-base-r.html#combining-data",
+    "href": "02-basic-base-r.html#combining-data",
+    "title": "2  R basics",
+    "section": "2.3 Combining data",
+    "text": "2.3 Combining data\nSo far we have work on single valued objects. This is not very efficient. Conveniently, R has an efficient way of working with data using vectors. A vector is a structure for combining data of the same type. For example, we can construct a numeric vector of heights using the combine function c(). Let’s say height &lt;- c(1.74, 1.81, 1.51, 1.92). An additional vector of weights can also be constructed as weight &lt;- c(85.1, 81.1, 48.9, 88.4). We can use these vector to do calculations, these calculations will be “vectorized”.\nThe body mass index is calculated as\n\\[BMI = \\frac{\\text{Weight (kg)}}{\\text{Height (m)}^2}\\]\nUsing vectorized operations we can calculate BMI for each row of the two vectors defined above simply using BMI &lt;- weight/height^2. Modify the code below to inspect each vector and the resulting BMI vector.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nVectors can be combined into data frames. These are convenient tabular, two-dimensional representations of multiple, equal length vectors. To combine the vectors defined above into a data frame we could directly put them in a data frame. In the example below we use df to name the data frame. To add a new variable (or vector) to the data frame we can use the $ operator which creates a new variable (or overwrites it!). Notice also that we access weight and height in the existing data.frame using the $ operator.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAlternatively we may access specific rows and columns of data frames using brackets. The syntax is df[row,column]. To access all row of a specific column, for example “weight” we would write df[,1]since weight is the first column of the data frame called “df”.\nTry to calculate BMI using the row index method explained above.\nA data frame can combine different data types in the same data structure. The data are, as indicate above related by row as one row contains e.g. weight and height from one individual. We might add information on the individuals by adding variables of different types. Modify and run the code below to inspect the data frame.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can further combine data into a list. A list can contain different data structures or values/objects. A list can even contain other lists. To combine objects into a list we simply put them into the list() function. To access objects in lists we can use double brackets. Using the code below we could access the second item in the list using my_list[[2]]. Objects in lists can also be named, in such cases we can use the $ operator to access them. Modify the code below to explore this concept.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "02-basic-base-r.html#logical-operations-and-conditions",
+    "href": "02-basic-base-r.html#logical-operations-and-conditions",
+    "title": "2  R basics",
+    "section": "2.4 Logical operations and conditions",
+    "text": "2.4 Logical operations and conditions\nIn the future you will select observations based on some specific conditions. This could for example mean that you would want to keep all observations where the variable X is greater than 5. To communicate this to R we would create a vector of TRUE and FALSE. R will keep all observations that satisfy our condition and therefore are TRUE.\nIn the script box below, we first construct a vector of numbers followed by a logical test. The test will result in TRUE when the condition is satisfied. Notice that the “test” gives you a vector of TRUE/FALSE.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn the example above we used the ‘greater than’ operator (&gt;). There are a few more usefull operators:\n\n\n\nOperator\nMeaning\n\n\n\n\n==\nequal to\n\n\n!=\nnot equal to\n\n\n&lt;\nless than\n\n\n&gt;\ngreater than\n\n\n&lt;=\nless than or equal to\n\n\n&gt;=\ngreater than or equal to\n\n\n\nTry to modify the script box above to test out the different operators.\nUsing the “AND” operator (&) we can add conditions that needs to be fulfilled to produce TRUE. This might be useful when two or more conditions needs to be satisfied. In addition to our values stored in my_values in the script box above, we might want to see the condition colors == \"green\" satisfied as well, where colors is a vector of colours. Run the codse below and inspect the results\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWe can store the results in a vector or use it to select values in a vector. Using brackets on a vector (or data frame) we can select observations based on a logical vector (produced by logical tests).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nUsing the “NOT” operator (!) we can perform negation on any of the logical operators. Let’s say we want have all observations that do not satisfy our filter above. Run the code below and inspect the results. Notice the parentheses which indicates that we put the negation on the whole expression.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe “OR” operator (|) gives us the possibility to select values that satisfies one or both of tqo conditions.\n\nmy_values &gt; 5 | colors == \"green\"\n\nTry to put the above in square brackets and filter one of the vectors to see that you get what you anticipate.\nFinally, we could test if a logical vector contains TRUE or if all values are TRUE. To do this we would use the functions any() and all().\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "02-basic-base-r.html#functions",
+    "href": "02-basic-base-r.html#functions",
+    "title": "2  R basics",
+    "section": "2.5 Functions",
+    "text": "2.5 Functions\nWe mentioned above that everything in R is an object. This is true even when we talk about functions. Functions are special kind of objects, they contain code that upon execution perform certain tasks. A function may need to have certain arguments specified. Arguments are user input into the function to specify how the functions should behave. A common usage of a function is to do something with data that you, the user, supply to the function.\nLet’s specify a function to see what it does. We have a vector of numbers, let’s say my_values. We want to construct a function that calculates the mean of that vector. The function may later be used to calculate averages of other vectors so we should try to make it as general as possible. Let’s start with the design of the actual calculation2.\n2 Don’t be afraid of mathematics! Take it slow and translate it to your language. Some books on statistics are a lot easier to read if you are prepared to read simple mathematical expressions. Sometimes it is also good to be able to write an expression. Mathematics, like computer code, is also a language. To learn a new language we need to try not to be afraid!The mean (\\(\\bar{x}\\)) of a vector (\\(x_i\\)) is calculated as\n\\[\\begin{align}\n\\bar{x}&=\\frac {1}{n} \\sum_{i=1}^{n}x_{i} \\\\\n&= \\frac {x_{1}+x_{2}+\\cdots +x_{n}}{n}\n\\end{align}\\]\nWhich we can read as “one over the number of observations times the sum of all observations”. Or, as in the second row, “the sum of all observations divided by the number of observations”.\nWe can translate this to code. A simple way to do this is to use other functions, in this case length() that returns the number of observations (or length) in a vector, and sum() that gives us the sum of all observations in a numeric vector. In the code block below I have simply combined data with the expression needed to calculate the average.\n\nsome_values &lt;- c(3, 4, 5, 6, 7, 8)\n\n1/length(some_values) * sum(some_values)\n\nThe next step is to put the code into a function. A function is defined using a special function, called function! Confusing? Yes. Let’s see how it is done.\n\nmy_mean_function &lt;- function(DATA) {\n  1/length(DATA) * sum(DATA)\n}\n\nUsing function we define the function called my_mean_function. Using the assignment operator it is stored in our environment (R’s working memory). The function “body” contains the code. It says that it will use an object called DATA that should be given as an argument in the function call, notice that we have defined the function with an argument called DATA.\nSince we are not storing the output from the calculation 1/length(DATA) * sum(DATA) in any new object inside the function running the function in our R session will return the mean of what ever we define as DATA.\nIn the script block below we have everything defined. Try out the function by modifying the code so that it prints my_mean.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOf course, there is already a function that will give you the mean of a numeric vector and it is called mean(). In the simple case, the mean() function takes one argument x that should be a numeric vector. It could look like this:\nmean(my_values) # Calculate the mean of your vector.\nDefining functions for yourself can be a very efficient way of performing data analysis, but most functions that you need are already specified in R. Other people have already gone trough the trouble of defining functions that are easy to use for specific tasks. In the next lesson we will explore the package handling system in R.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "03-r-packages.html",
+    "href": "03-r-packages.html",
+    "title": "3  Packages are where functions live",
+    "section": "",
+    "text": "3.1 File formats for editing and executiong R code\nThe R ecosystem consists of packages. These are collections of functions organized in a systematic manner. Functions are created to perform a specialized task. And packages often have many function used to do e.g. analyses of a specific kind of data, or more general task such as making figures or handle data.\nIn this course we will use many different packages, for example dplyr, tidyr and ggplot2. dplyr and tidyr are packages used to transform and clean data. ggplot2 is used for making figures.\nTo install a package, you use the install.packages() function. You only need to do this once on your computer (unless you re-install R). You can write the following code in your console to install dplyr.\nAlternatively, click “Packages” and “Install” and search for the package you want to install. To use a package, you have to load it into your environment. Use the library() function to load a package.\nThe package dplyr has now loaded into your environment, this means that all the functions that are part of the dplyr package are available for R.\nA confusing part of using R is that we are really just able to communicate with R through the console. There are however a lot of methods to do this, and save your input, and output for later. This is central to how we will work with R: We create some input (code), R returns results, like numbers, text or figures and these can be formatted to be saved in different formats.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Packages are where functions live</span>"
+    ]
+  },
+  {
+    "objectID": "03-r-packages.html#file-formats-for-editing-and-executiong-r-code",
+    "href": "03-r-packages.html#file-formats-for-editing-and-executiong-r-code",
+    "title": "3  Packages are where functions live",
+    "section": "",
+    "text": "3.1.1 R scripts\nThe most basic file format for R code is an R script, as we have already touched upon. An R script contains code and comments. Code is executed by R and comments are ignored. Ideally, R scripts are commented to improve readability of what the do. Commenting code is also a good way of creating a roadmap of what you want to do. In the image below (Figure 3.1), R code is written based on a plan written with comments. Note that when a line starts with at least one # it is interpreted by R as a comment.\n\n\n\n\n\n\nFigure 3.1: Commenting and coding in an R script",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Packages are where functions live</span>"
+    ]
+  }
+]
