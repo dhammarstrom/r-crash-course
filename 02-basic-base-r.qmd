@@ -363,3 +363,17 @@ mean(my_values) # Calculate the mean of your vector.
 Defining functions for yourself can be a very efficient way of performing data analysis, but most functions that you need are already specified in R. Other people have already gone trough the trouble of defining functions that are easy to use for specific tasks. In the next lesson we will explore the package handling system in R.
 
 
+
+## File formats for editing and executiong R code
+
+A confusing part of using R is that we are really just able to communicate with R through the console. There are however a lot of methods to do this, and save your input, and output for later. This is central to how we will work with R: We create some input (code), R returns results, like numbers, text or figures and these can be formatted to be saved in different formats.
+
+### R scripts
+
+The most basic file format for R code is an R script, as we have already touched upon. An R script contains code and comments. Code is executed by R and comments are ignored. Ideally, R scripts are commented to improve readability of what the do. Commenting code is also a good way of creating a roadmap of what you want to do. In the image below (@fig-rscript), R code is written based on a plan written with comments. Note that when a line starts with at least one `#` it is interpreted by R as a comment.     
+
+![Commenting and coding in an R script](images/ch3/03-rscript.gif){#fig-rscript}
+
+Later we will introduce another format, a format that enables combining R code with prose, tables, figures and more.
+
+

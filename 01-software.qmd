@@ -32,8 +32,66 @@ There are multiple computer languages and software solutions that could satisfy 
 2.  Scroll down and find the [Open Source Edition](https://posit.co/products/open-source/rstudio/)
 3.  Download the installer made for your operating system.
 
-### A first look at RStudio
+## The Anatomy of RStudio
 
+The appearance of RStudio can be changed for a more pleasant user experience. I like a dark theme as it is easier on the eye. We can also move the different components of RStudio. I like to have the console on the top right and the source on the top left. I think this makes it easier to see output when coding interactively. All this will be clearer as thing evolve, but for now, start R Studio, go to Tools > Global options and make it personal (see @fig-customize)!
+
+![Customize the appearance of RStudio](images/ch3/03-customizerstudio.gif){#fig-customize}
+
+As you may have spotted in the image above, it is possible to change the font of your editor. I like [Fira code](https://github.com/tonsky/FiraCode/wiki/RStudio-instructions). 
+
+
+::: {.callout-tip}
+## Defining concepts
+
+**Source editor**: Is where scripts are edited. 
+
+**Environment**: In R, the environment is where data variables and structures are saved during execution of code.
+
+**Script**: Your script is the document containing your computer code. This is your computer program (using a loose definition of a software program).
+
+**Variables**: In R, variables are containers for data values. 
+
+**Workspace**: This is your environments as represented on your computer. A workspace can be, but should not be saved between sessions.
+
+:::
+
+### The source editor
+
+The source editor is where you edit your code. When writing your code in a text-file, you can call it a script, this is essentially a computer program where you tell R what to do. It is executed from top to bottom. You can send one line of code, multiple lines or whole sections into R. In the image below (@fig-interactionrstudio), the source window is in the top left corner.
+
+### Environment
+
+The environment is where all your objects are located. Objects can be variables or data sets that you are working with. In RStudio the environment is listed under the environment tab (bottom left in the image).
+
+Copy the code below to a R script. To run it line by line, set your cursor on the first line a press Ctrl+Enter. What happened in your environment? Press Ctrl+Enter again and you will see a plot in the plot window. Amazing stuff! 
+
+```{r, eval = FALSE}
+
+a <- c(1, 2, 3, 4)
+
+plot(a)
+
+```
+
+
+### The console
+
+By pressing Ctrl+Enter from the script, as described above, you sent your code to the console. You can also interact with R directly here. By writing `a` in the console and hitting enter you will get the value from the object called a. This means that it is also where output from R is usually printed. In the image below, the console is in the top right corner.
+
+### Files, plots, packages and help files
+
+In RStudio files are accessible from the Files tab. The files tab shows the files in you root folder. The root folder is where R will search for files if you tell it to. We will talk more about the root folder later in connection with projects. Plots are displayed in the Plot tab. Packages are listed in the packages tab. If you access the help files, these will be displayed in the help tab. In the image below all these tabs are in the bottom right corner. More on help files and packages later.
+
+![Interacting with RStudio](images/ch3/03-interactingrstudio.gif){#fig-interactionrstudio}
+
+
+
+## Reproducible data science using RStudio
+
+When starting to work more systematically in RStudio we will set some rules that will allow for reproducible programming. Remember from [Chapter 2](01-intro-to-data.html#replication-and-reproducibility) that part of a fully reproducible study is software/code that produces the results. It turns out that when working interactively with R you can fool yourself to believe that you have included all steps needed to produce some results in your script. However, variables may be stored in your environment but not by assigning values to them in your script. This will become a problem if you want to share your code, a certain value/variable needed to make the program work may be missing from your script.
+
+To avoid making such a mistake it is good practice not to save variables in your environment between sessions, everything should be scripted and documented and assumed not defined elsewhere. In RStudio we can make an explicit setting Not to save the workspace (See @fig-saveworkspace).
 
 
 ## Git and Github
