@@ -161,15 +161,38 @@ In the above section we have identified different types of data that are used in
 
 
 
-## Combining data
+## Combining data and vectorized operations
 
 So far we have work on single valued objects. This is not very efficient. Conveniently, R has an efficient way of working with data using vectors. A vector is a structure for combining data of the same type. For example, we can construct a numeric vector of heights using the combine function `c()`. Let's say `height <- c(1.74, 1.81, 1.51, 1.92)`. An additional vector of weights can also be constructed as `weight <- c(85.1, 81.1, 48.9, 88.4)`. We can use these vector to do calculations, these calculations will be "vectorized".
 
-The body mass index is calculated as 
+A vectorized computation means that R will perform e.g., a mathematical function on whole data sets. For R this is the most efficient way to do calculations. For the user, vectorized operations means that we can define e.g., mathematical operations on vectors. When we add two vectors we basically perform row-wise computations (@fig-vectorize). This means that when we give R two vectors and a mathematical operator, such as `x1 + x2`, R will return a vector with each element corresponding to the sum of each row of `x1` and `x2`. 
 
-$$BMI = \frac{\text{Weight (kg)}}{\text{Height (m)}^2}$$
+![Understanding vectorized operations as row-wise operations](images/ch2/vectorized.png){#fig-vectorize}
 
-Using vectorized operations we can calculate BMI for *each row* of the two vectors defined above simply using `BMI <- weight/height^2`. Modify the code below to inspect each vector and the resulting `BMI` vector.
+When we supply two vectors of different size to R it will try to re-use the smaller vector to match the larger vector @fig-vectorize2. 
+
+
+![Smaller objects are re-used over larger vectors](images/ch2/vectorized2.png){#fig-vectorize2}
+
+If we try to match two vectors where the smaller cannot be re-used across the larger object we will get an error message.
+
+```{r}
+
+x1 <- c(1, 2, 3, 4)
+x2 <- c(1, 3, 4) 
+
+x1 + x2
+```
+
+
+
+
+Let's return to the body mass index calculation (@eq-bmi). Using vectorized operations we can calculate BMI for *each row* of the two vectors defined above simply using `BMI <- weight/height^2`. Modify the code below to inspect each vector and the resulting `BMI` vector.
+
+::: {.column-margin}
+$$\text{BMI} = \frac{\text{Weight (kg)}}{\text{Height (m)}^2}$$ {#eq-bmi}
+::: 
+
 
 ```{webr-r}
 weight <- c(85.1, 81.1, 48.9, 88.4)
@@ -178,6 +201,8 @@ height <- c(1.74, 1.81, 1.51, 1.92)
 BMI <- weight/height^2
 
 ```
+
+### Data frames
 
 Vectors can be combined into data frames. These are convenient tabular, two-dimensional representations of multiple, equal length vectors. To combine the vectors defined above into a data frame we could directly put them in a data frame. In the example below we use `df` to name the data frame. To add a new variable (or vector) to the data frame we can use the `$` operator which creates a new variable (or overwrites it!). Notice also that we access weight and height in the existing data.frame using the `$` operator.
 
@@ -300,6 +325,40 @@ all(colors == "green") # Not all values are TRUE
 
 ## Functions
 
+R is full of functions, even without loading any extension packages (see @sec-functions). When you start up R, your computing environment contains a large collection (thousands) of functions, designed to perform specific tasks. Functions makes it easier to write complex programs, or data analyses as we do not need to write every part of the program from scratch. Functions are in a way small modular programs that we can use to efficiently create larger programs.
+
+We have already worked with some functions above. The basic form for using a function in R is shown in @fig-functionparts. The name of the function lets R know what function you want to use and the arguments, defined within parentheses tell the function what to do.  
+
+![Basic form for a R function](images/ch2/function-parts.png){#fig-functionparts}
+
+In the example above we are using the `mean` function with a vector called `x`, by setting `na.rm=TRUE` we are telling the function to ignore any missing data in the vector `x`.
+
+Knowing R is about knowing functions. The most basic functions are reused in many situations and with some experience they will become part of your vocabulary. For example when summarising data you might use functions that calculate the the center or spread in your data (see @tbl-basicrfunctions).
+
+|R function |Description |
+|---|---|
+|`mean(x)`|Calculates the arithmetic mean|
+|`min(x)`|Finds the smallest value|
+|`max(x)`|Finds the maximum value|
+|`quantile(x, 0.25)`| Returns the percentage quantile, in this case the the observation corresponding to 25% of the data|
+|`sd(x)`|Calculates the standard deviation of a vector|
+|`var(x)`| Calculates the variance of vector|
+|`sqrt(x)`|Calculates the square root of each value in a vector|
+|`log(x)`|Returns the natural logarithm each value in a vector|
+|`exp(x)`|Returns the exponential of the values in a vector|
+
+: Basic R functions for mathematical operations {#tbl-basicrfunctions}
+
+### How to use a function?
+
+How do I know how to use a function? One of the core strength of R is the availability of standardized documentation for functions. If we want to find out how to use the `mean`function we can simply write `?mean` in the console. Try it out! You will find that a help page opens up in RStudio under the help tab containing a lot of information (see @fig-functionhelp)
+
+![Basic form for documentation of a R function](images/ch2/function-help.png){#fig-functionhelp}
+The standardized documentation is similar across all well-developed packages and is a requirement for publishing a package in an official database (see @sec-functions). This requirement makes it easier to learn how to read the documentation, but it do takes some practice.
+
+
+## User-created functions
+
 We mentioned above that everything in R is an object. This is true even when we talk about functions. Functions are special kind of objects, they contain code that upon execution perform certain tasks. A function may need to have certain arguments specified. Arguments are user input into the function to specify how the functions should behave. A common usage of a function is to do something with data that you, the user, supply to the function. 
 
 Let's specify a function to see what it does. We have a vector of numbers, let's say `my_values`. We want to construct a function that calculates the mean of that vector. The function may later be used to calculate averages of other vectors so we should try to make it as general as possible. Let's start with the design of the actual calculation[^afraid]. 
@@ -364,7 +423,7 @@ Defining functions for yourself can be a very efficient way of performing data a
 
 
 
-## File formats for editing and executiong R code
+## File formats for editing and executing R code
 
 A confusing part of using R is that we are really just able to communicate with R through the console. There are however a lot of methods to do this, and save your input, and output for later. This is central to how we will work with R: We create some input (code), R returns results, like numbers, text or figures and these can be formatted to be saved in different formats.
 

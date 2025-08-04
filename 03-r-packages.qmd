@@ -3,7 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Packages are where functions live
+# Packages are where functions live {#sec-functions}
 
 The R ecosystem consists of packages. These are collections of functions organized in a systematic manner. Functions are created to perform a specialized task, and packages often have many function used to do e.g. analyses of a specific kind of data, or more general task such as making figures or handle data.
 

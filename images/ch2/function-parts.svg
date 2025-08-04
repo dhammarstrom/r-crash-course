@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="74mm"
+   height="14mm"
+   viewBox="0 0 74 14"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="function-parts.svg"
+   inkscape:export-filename="function-parts.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="4.1585017"
+     inkscape:cx="98.352732"
+     inkscape:cy="97.03014"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:export-bgcolor="#ffffffff" />
+  <defs
+     id="defs1" />
+  <rect
+     style="fill:#00ccff;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:0.8"
+     id="rect5"
+     width="17.115038"
+     height="7.6349602"
+     x="0.1272497"
+     y="4.2971435" />
+  <rect
+     style="fill:#ff7f2a;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:0.8"
+     id="rect5-1"
+     width="4.9627233"
+     height="7.6985855"
+     x="19.733002"
+     y="4.3279471" />
+  <rect
+     style="fill:#ff7f2a;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:0.8"
+     id="rect5-1-5"
+     width="39.192799"
+     height="7.5713363"
+     x="31.718277"
+     y="4.3512311" />
+  <g
+     inkscape:label="Lag 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1;font-family:Consolas;-inkscape-font-specification:Consolas;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:0.8"
+       x="12.215938"
+       y="24.686375"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:Consolas;fill:#000000;stroke:none;stroke-width:0.265"
+         x="12.215938"
+         y="24.686375" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1;font-family:Consolas;-inkscape-font-specification:Consolas;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:0.8"
+       x="0.89074618"
+       y="10.023355"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-size:7.05556px;stroke-width:0.265"
+         x="0.89074618"
+         y="10.023355">mean(x, na.rm=TRUE)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;line-height:0.7;font-family:Corbel;-inkscape-font-specification:Corbel;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2ad4ff;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:0.8"
+       x="0.63624662"
+       y="3.3570485"
+       id="text3"><tspan
+         sodipodi:role="line"
+         style="line-height:0.7;fill:#2ad4ff;stroke:none;stroke-width:0.265"
+         x="0.63624662"
+         y="3.3570485"
+         id="tspan4">Name</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;line-height:0.7;font-family:Corbel;-inkscape-font-specification:Corbel;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ff7f2a;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-miterlimit:0.8"
+       x="20.171926"
+       y="3.3570485"
+       id="text3-8"><tspan
+         sodipodi:role="line"
+         style="line-height:0.7;fill:#ff7f2a;stroke-width:0.265"
+         x="20.171926"
+         y="3.3570485"
+         id="tspan4-2">Arguments</tspan></text>
+  </g>
+</svg>
